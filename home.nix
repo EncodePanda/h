@@ -1,0 +1,90 @@
+{ config, pkgs, ... }:
+
+{
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = "encodepanda";
+  home.homeDirectory = "/Users/encodepanda";
+
+  # zsh
+  programs.zsh = {
+    enable = true;
+    # this sources nix in the newly created .zshrc
+    initExtra = ''
+      . ~/.nix-profile/etc/profile.d/nix.sh
+    '';
+    enableAutosuggestions = true;
+    history.extended = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "cabal"
+      ];
+      theme = "half-life";
+    };
+    loginExtra = ''
+      bindkey '^R' history-incremental-pattern-search-backward
+      bindkey '^F' history-incremental-pattern-search-forward
+    '';
+  };
+
+  # direnv
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  # bat is just better cat
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "TwoDark";
+    };
+  };
+
+  # git with initial configration:wq
+  programs.git = {
+    enable = true;
+    userName = "EncodePanda";
+    userEmail = "paul.szulc@gmail.com";
+    ignores = [ "*~" ];
+  };
+
+  programs.emacs = {
+    enable = true;
+  };
+
+  # enable autojump https://github.com/wting/autojump
+  programs.autojump = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  home.packages = [
+    # silver search (ag) is used by Emacs to grep files quickly
+    pkgs.silver-searcher
+    # ispell is a dictionary software, works nicely with Emacs
+    # TODO open PR with ispell in home-manager with ability to
+    # select dictionaries
+    pkgs.ispell
+    # nix files formatter, works nicely with Emacs
+    pkgs.nixpkgs-fmt
+    # gh support in home-manager is broken
+    # https://github.com/nix-community/home-manager/issues/1654
+    # thus I had to use home.packages approach
+    pkgs.gitAndTools.gh
+  ];
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = "21.03";
+}
