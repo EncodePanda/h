@@ -37,6 +37,24 @@
     enableZshIntegration = true;
   };
 
+  programs.htop = {
+    enable = true;
+    fields = [
+      "PID"
+      "PERCENT_CPU"
+      "PERCENT_MEM"
+      "TIME"
+      "PRIORITY"
+      "NICE"
+      "M_SIZE"
+      "M_RESIDENT"
+      "M_SHARE"
+      "STATE"
+      "COMM"
+    ];
+    sortKey = "COMM";
+  };
+
   # bat is just better cat
   programs.bat = {
     enable = true;
