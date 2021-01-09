@@ -55,6 +55,9 @@
     sortKey = "COMM";
   };
 
+  # jq
+  programs.jq.enable = true;
+
   # bat is just better cat
   programs.bat = {
     enable = true;
