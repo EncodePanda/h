@@ -9,6 +9,13 @@
   home.username = "encodepanda";
   home.homeDirectory = "/Users/encodepanda";
 
+  # tmux
+  # TODO enable plugins
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+  };
+
   # zsh
   programs.zsh = {
     enable = true;
