@@ -38,6 +38,17 @@
     '';
   };
 
+  # notifications when long running command is finished
+  # e.g noti -s cabal build
+  programs.noti = {
+    enable = true;
+    settings = {
+      say = {
+        voice = "Alex";
+      };
+    };
+  };
+
   # direnv
   programs.direnv = {
     enable = true;
