@@ -120,6 +120,9 @@
     # https://github.com/nix-community/home-manager/issues/1654
     # thus I had to use home.packages approach
     pkgs.gitAndTools.gh
+    # wireshark to analyze tcpdumps
+    pkgs.wireshark
+    pkgs.termshark
   ];
 
   # This value determines the Home Manager release that your
