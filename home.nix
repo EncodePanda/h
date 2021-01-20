@@ -25,6 +25,11 @@
     '';
     enableAutosuggestions = true;
     history.extended = true;
+    shellAliases = {
+      nhn = "nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-starter-kit'";
+      ll = "ls -l";
+      ".." = "cd ..";
+    };
     oh-my-zsh = {
       enable = true;
       plugins = [
