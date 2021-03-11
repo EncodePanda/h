@@ -123,6 +123,18 @@
     # wireshark to analyze tcpdumps
     pkgs.wireshark
     pkgs.termshark
+    # pandoc to convert between different text formats
+    pkgs.pandoc
+    # ripgrep is a line-oriented search tool that recursively
+    # searches your current directory for a regex pattern
+    pkgs.ripgrep
+    # stack
+    pkgs.stack
+    # fswatch is a file change monitor
+    pkgs.fswatch
+    # entr - Run arbitrary commands when files change
+    # docs http://eradman.com/entrproject/
+    pkgs.entr
   ];
 
   # This value determines the Home Manager release that your
