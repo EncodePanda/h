@@ -136,6 +136,11 @@
     # entr - Run arbitrary commands when files change
     # docs http://eradman.com/entrproject/
     pkgs.entr
+    # nix-prefetch-git for things like following:
+    # https://input-output-hk.github.io/haskell.nix/tutorials/source-repository-hashes/
+    pkgs.nix-prefetch-git
+    # look at nix dependencies
+    pkgs.nix-tree
   ];
 
   # This value determines the Home Manager release that your
