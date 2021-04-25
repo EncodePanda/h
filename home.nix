@@ -141,6 +141,11 @@
     pkgs.nix-prefetch-git
     # look at nix dependencies
     pkgs.nix-tree
+    # exa is a modern replacement of ls
+    # It uses colours to distinguish file types and metadata.
+    # It knows about symlinks, extended attributes, and Git.
+    # more: https://the.exa.website/
+    pkgs.exa
   ];
 
   # This value determines the Home Manager release that your
