@@ -11,6 +11,8 @@
   home.sessionVariables = {
     # For hunspell in Emacs
     DICPATH = "$HOME/.nix-profile/share/aspell";
+    CARGO_HOME = "$HOME/.cargo/";
+    RUSTUP_HOME = "$HOME/.rustup";
   };
 
   home.sessionPath = [
