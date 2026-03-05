@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -8,6 +8,10 @@
   # paths it should manage.
   home.username = "encodepanda";
   home.homeDirectory = "/Users/encodepanda";
+  home.sessionVariables = {
+    # For hunspell in Emacs
+    DICPATH = "$HOME/.nix-profile/share/aspell";
+  };
 
   # tmux
   # TODO enable plugins
