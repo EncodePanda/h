@@ -27,6 +27,9 @@
     # . "~/.cargo/env"
     initContent = ''
       . ~/.nix-profile/etc/profile.d/nix.sh
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+      [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
     '';
 
     autosuggestion.enable = true;
@@ -48,6 +51,14 @@
       bindkey '^F' history-incremental-pattern-search-forward
     '';
   };
+
+  home.activation.installNvm = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -d "$HOME/.nvm" ]; then
+      echo "Installing nvm to $HOME/.nvm"
+      ${pkgs.curl}/bin/curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
+        | PROFILE=/dev/null bash
+    fi
+  '';
 
   # notifications when long running command is finished
   # e.g noti -s cabal build
