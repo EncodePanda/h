@@ -13,6 +13,15 @@
     DICPATH = "$HOME/.nix-profile/share/aspell";
   };
 
+  home.sessionPath = [
+    "/usr/local/opt/libpq/bin"
+    "$HOME/.cargo/bin"
+    "$HOME/.cabal/bin"
+    "$HOME/.ghcup/bin"
+    "$HOME/mutable_node_modules/bin"
+    "$HOME/.local/bin"
+  ];
+
   # tmux
   # TODO enable plugins
   programs.tmux = {
