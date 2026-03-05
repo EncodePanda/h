@@ -43,8 +43,13 @@
       enable = true;
       plugins = [
         "cabal"
+        "git"
+        "git-prompt"
+        "gitignore"
+        "copyfile"
+        "aliases"
       ];
-      theme = "half-life";
+      theme = "candy";
     };
     loginExtra = ''
       bindkey '^R' history-incremental-pattern-search-backward
