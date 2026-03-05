@@ -110,10 +110,6 @@
     ignores = [ "*~" ];
   };
 
-  programs.emacs = {
-    enable = true;
-  };
-
   # enable autojump https://github.com/wting/autojump
   programs.autojump = {
     enable = true;
