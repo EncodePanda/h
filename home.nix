@@ -27,7 +27,8 @@
     initExtra = ''
       . ~/.nix-profile/etc/profile.d/nix.sh
     '';
-    enableAutosuggestions = true;
+
+    autosuggestion.enable = true;
     history.extended = true;
     shellAliases = {
       nhn = "nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-starter-kit'";
