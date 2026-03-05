@@ -94,12 +94,13 @@
       theme = "TwoDark";
     };
   };
-
-  # git with initial configration:wq
+  # git with initial configuration
   programs.git = {
     enable = true;
-    userName = "EncodePanda";
-    userEmail = "paul.szulc@gmail.com";
+    settings = {
+       user.email = "paul.szulc@gmail.com";
+       user.name = "EncodePanda";
+    };
     ignores = [ "*~" ];
   };
 
