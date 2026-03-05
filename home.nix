@@ -107,22 +107,14 @@
     # TODO open PR with ispell in home-manager with ability to
     # select dictionaries
     pkgs.ispell
-    # nix files formatter, works nicely with Emacs
-    pkgs.nixpkgs-fmt
-    # gh support in home-manager is broken
-    # https://github.com/nix-community/home-manager/issues/1654
-    # thus I had to use home.packages approach
-    pkgs.gitAndTools.gh
-    # wireshark to analyze tcpdumps
-    pkgs.wireshark
+    # nix files formatters
+    pkgs.nixpkgs-fmt # works nicely with Emacs
     pkgs.termshark
     # pandoc to convert between different text formats
     pkgs.pandoc
     # ripgrep is a line-oriented search tool that recursively
     # searches your current directory for a regex pattern
     pkgs.ripgrep
-    # stack
-    pkgs.stack
     # fswatch is a file change monitor
     pkgs.fswatch
     # entr - Run arbitrary commands when files change
@@ -133,11 +125,42 @@
     pkgs.nix-prefetch-git
     # look at nix dependencies
     pkgs.nix-tree
-    # exa is a modern replacement of ls
-    # It uses colours to distinguish file types and metadata.
-    # It knows about symlinks, extended attributes, and Git.
-    # more: https://the.exa.website/
-    pkgs.exa
+    # plantuml
+    pkgs.plantuml
+    # yt-dlp allows to download youtube videos
+    pkgs.yt-dlp
+    # graphviz
+    pkgs.graphviz
+    # niv
+    pkgs.niv
+    # gnuplot for plotting images from the command line
+    pkgs.gnuplot
+    # cookiecutter for templates like EncodePanda/haskell-starter-kit
+    pkgs.cookiecutter
+    # Pipe your nix-build output through the nix-output-monitor (aka nom) to get
+    # additional information while building.
+    pkgs.nix-output-monitor
+    # coq
+    pkgs.coq
+    # p7zip
+    pkgs.p7zip
+    # gls because Emacs :shrug:
+    pkgs.coreutils
+    # task juggler
+    pkgs.taskjuggler
+    # large files
+    pkgs.git-lfs
+    # absorbs fixups into a commit
+    pkgs.git-absorb
+    pkgs.nix-du
+    # https://github.com/theZiz/aha
+    pkgs.aha
+    pkgs.gdb
+    pkgs.asciinema
+    pkgs.nmap
+    pkgs.postgresql
+    pkgs.wget
+    pkgs.scala
   ];
 
   # This value determines the Home Manager release that your
