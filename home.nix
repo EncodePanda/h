@@ -172,7 +172,6 @@
     pkgs.nix-du
     # https://github.com/theZiz/aha
     pkgs.aha
-    pkgs.gdb
     pkgs.asciinema
     pkgs.nmap
     pkgs.postgresql
