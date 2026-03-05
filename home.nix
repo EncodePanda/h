@@ -24,7 +24,8 @@
   programs.zsh = {
     enable = true;
     # this sources nix in the newly created .zshrc
-    initExtra = ''
+    # . "~/.cargo/env"
+    initContent = ''
       . ~/.nix-profile/etc/profile.d/nix.sh
     '';
 
