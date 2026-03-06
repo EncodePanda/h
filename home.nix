@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, gitEnable, ... }:
 
 {
   # Let Home Manager install and manage itself.
@@ -56,6 +56,7 @@
       ll = "ls -l";
       ".." = "cd ..";
       hms = "home-manager switch --flake ~/projects/h#\"encodepanda@$(uname -m | sed 's/arm64/aarch64/')-darwin\"";
+      hmswg = "home-manager switch --flake ~/projects/h#\"encodepanda@$(uname -m | sed 's/arm64/aarch64/')-darwin-withgit\"";
     };
     oh-my-zsh = {
       enable = true;
@@ -116,7 +117,7 @@
     };
   };
   # git with initial configuration
-  programs.git = {
+  programs.git = lib.mkIf gitEnable {
     enable = true;
     settings = {
        user.email = "paul.szulc@gmail.com";
