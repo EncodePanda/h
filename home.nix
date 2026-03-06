@@ -41,6 +41,9 @@
       export LANG=en_US.UTF-8
       export LANGUAGE=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
+
+      eval "$(atuin init zsh)"
+
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
       [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
@@ -187,6 +190,7 @@
     pkgs.postgresql
     pkgs.wget
     pkgs.scala
+    pkgs.atuin
   ];
 
   # This value determines the Home Manager release that your
