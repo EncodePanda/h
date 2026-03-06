@@ -55,6 +55,7 @@
       nhn = "nix-shell -p cookiecutter git --run 'cookiecutter gh:EncodePanda/haskell-starter-kit'";
       ll = "ls -l";
       ".." = "cd ..";
+      hms = "home-manager switch --flake ~/projects/h#\"encodepanda@$(uname -m | sed 's/arm64/aarch64/')-darwin\"";
     };
     oh-my-zsh = {
       enable = true;

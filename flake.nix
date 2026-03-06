@@ -12,17 +12,17 @@
 
   outputs = { nixpkgs, home-manager, ... }:
   let
-    system = "x86_64-darwin"; # change to aarch64-darwin if Apple Silicon
-    pkgs = import nixpkgs { inherit system; };
-  in
-  {
-    homeConfigurations.encodepanda =
+    mkHome = system:
       home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = import nixpkgs { inherit system; };
 
         modules = [
           ./home.nix
         ];
       };
+  in
+  {
+    homeConfigurations."encodepanda@x86_64-darwin" = mkHome "x86_64-darwin";
+    homeConfigurations."encodepanda@aarch64-darwin" = mkHome "aarch64-darwin";
   };
 }
